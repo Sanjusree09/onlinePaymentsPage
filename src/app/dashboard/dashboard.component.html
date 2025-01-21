@@ -1,0 +1,68 @@
+  
+<div class="flex flex-row h-screen">
+
+<div class="bg-zinc-950  h-screen w-32">
+<h1 class="text-2xl font-medium text-indigo-300 ">Nav Bar</h1>
+<!--
+<div class="flex flex-col items-start">
+<label for="logo-upload" class="font-medium text-lg text-white">Upload Logo</label>
+<input type="file" id="logo-upload" (change)="onLogoUpload($event)" class="mt-2i text-sm text-gray-700 file:border file:bg-blue-100 file:text-blue-700 file:px-3 file:py-2 file:rounded-md file:cursor-pointer" />
+</div>
+-->
+<div class="flex flex-col items-start py-4 pt-12">
+<label for="header-color" class="font-medium text-lg text-white">Bg Color</label>
+<input type="color" id="header-color" [(ngModel)]="backgroundColor" (input)="updateBgColor(backgroundColor)" class="mt-2 p-2 border rounded-md"/>
+</div>
+
+<div class="flex flex-col items-start py-4">
+<label for="brand-color" class="font-medium text-lg text-white">Brand Color</label>
+<input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="mt-2 p-2 border rounded-md"/>
+</div>
+
+<div class="flex flex-col items-start py-4">
+<label for="accent-color" class="font-medium text-lg text-white">Accent Color</label>
+<input type="color" id="button-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="mt-2 p-2 border rounded-md"/>
+</div>
+
+<div class="flex flex-col items-start py-4">
+<label for="buttons" class="font-medium text-lg text-white">Button Shape</label>
+<select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class="mt-2 p-2 border rounded-md bg-white text-gray-700">
+	<option value="rounded">Rounded</option>
+	<option value="pill">Pill</option>
+	<option value="edgy">Edgy</option>
+</select> 
+</div>
+
+<div class="flex flex-col items-start py-4">
+<label for="font-family" class="font-medium text-lg text-white">Font Type</label>
+<select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)"  class="mt-2 p-2 border rounded-md bg-white text-gray-700">
+        <option value="Arial, sans-serif">sans-serif</option>
+        <option value="Courier New, Courier, monospace">mono</option>
+        <option value="Georgia, serif">serif</option>
+</select>
+
+
+</div>
+</div>
+
+
+<div class="flex flex-row min-w-screen min-h-screen">
+ <app-mock-component class="" [accentColor]="accentColor"  [backgroundColor]="backgroundColor" [fontType]="fontType"></app-mock-component>
+ <app-mock-component1 class=""[accentColor]="accentColor" [logoUrl]="logoUrl"  [brandColor]="brandColor" [fontType]="fontType" [buttonShape]="buttonShape"></app-mock-component1>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
