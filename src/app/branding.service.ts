@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
 })
 export class BrandingService {
 
-saveBrandingChanges(branding:{bgColor:string}){
+saveBrandingChanges(branding:{backgroundColor:string}){
 	localStorage.setItem('branding', JSON.stringify(branding));
  console.log('Branding saved to localStorage:', branding); 
 }
 
-getBrandingChanges():{bgColor:string} | null{
+getBrandingChanges():{backgroundColor:string} | null{
 
 const branding = localStorage.getItem('branding');
 console.log('Branding retrieved from localStorage:', branding); 

@@ -11,7 +11,7 @@ export class MockComponent1Component {
 
 @Input() brandColor: string = '';
 @Input() fontType: string = '';
-@Input() buttonShape =  '';
+@Input() buttonShape ='';
 @Input() accentColor: string = '';
 @Input() logoUrl: string='';
 }

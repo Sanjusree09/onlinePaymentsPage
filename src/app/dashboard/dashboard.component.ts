@@ -16,7 +16,7 @@ export class DashboardComponent {
   brandColor: string = '#E1E6FF';  
   accentColor: string = '#ECECEC';
   fontType: string = 'Arial, sans-serif';
-  buttonShape='rounded';
+  buttonShape ='rounded';
   onLogoUpload(event: any): void {
     const file = event.target.files[0];
     if (file) {
@@ -27,7 +27,11 @@ export class DashboardComponent {
       reader.readAsDataURL(file);
     }
   }
+  isMenuOpen: boolean = false;
 
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
   updateBgColor(color: string): void {
     this.backgroundColor = color;
   }
