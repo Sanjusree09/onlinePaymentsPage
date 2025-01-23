@@ -4,22 +4,21 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class BrandingService {
+ private brandingDataKey = 'brandingData'; 
 
-saveBrandingChanges(branding:{backgroundColor:string}){
-	localStorage.setItem('branding', JSON.stringify(branding));
- console.log('Branding saved to localStorage:', branding); 
-}
+  constructor() {}
 
-getBrandingChanges():{backgroundColor:string} | null{
+  saveBrandingData(data: {brandColor:string;  backgroundColor: string; accentColor:string; buttonShape:string;  fontType: string }) {
+    localStorage.setItem(this.brandingDataKey, JSON.stringify(data));
+  }
 
-const branding = localStorage.getItem('branding');
-console.log('Branding retrieved from localStorage:', branding); 
-return branding ? JSON.parse(branding):null;
+  getBrandingData() {
+    const data = localStorage.getItem(this.brandingDataKey);
+    console.log(data);
+    return data ? JSON.parse(data) : null;
+  }
 
-}
-
-clearBrandingChanges():void{
-localStorage.removeItem('branding');
-console.log('Branding removed from localStorage'); 
-}
+  clearBrandingData() {
+    localStorage.removeItem(this.brandingDataKey);
+  }
 }

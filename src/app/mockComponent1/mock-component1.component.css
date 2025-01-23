@@ -1,1 +1,15 @@
+.rounded {
+  border-radius: 100%;
+  border: 10px solid red; 
+}
+
+.pill {
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.edgy {
+  border-radius: 20%;
+  border: 2px solid #ccc; 
+}
  
