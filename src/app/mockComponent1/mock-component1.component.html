@@ -1,22 +1,22 @@
-<div [ngStyle]="{'font-family': fontType}">
-	
-<div class="pt-16">
-<img src="icons/English.svg" class="float-right  w-20 h-10  rounded-md"/>
+<div [ngStyle]="{'font-family': fontType}" class="font-lato">
+<div class="pr-4">
+  <img src="icons/English.svg" class="float-right w-20 h-10 rounded-md" />
 </div>
-<div class="flex justify-center">
-<h1 class="text-xl font-bold text-center mt-4">Test store changed</h1>
+
+<div class="flex justify-center items-center">
+  <h1 class="text-xl font-bold text-center mt-4">Test store changed</h1>
 </div>
-</div>
-<div class=" pl-10 font-bold text-xl py-4" [ngStyle]="{'font-family': fontType}">
+
+<div class=" pl-10 font-bold text-xl py-4 pt-20" [ngStyle]="{'font-family': fontType}">
 	<h1>Select how to pay</h1>	
 </div>
 <form class="px-8" [ngStyle]="{'font-family': fontType}">
-	<div class=" rounded-lg border-2  w-full h-full border-indigo-200 ">
+	<div class="border-2 border-indigo-200 rounded-lg">
 
-		<div class="flex flex-row p-2 justify-between border-b border-indigo-300 " [ngStyle]="{'background-color': brandColor}">
+		<div class="flex flex-row p-2  justify-between  bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
 			
-			<div class="flex flex-row ">
-			<img src="icons/creditCardIcon.png" class="w-8 h-6"/>
+			<div class="flex flex-row rounded-md  ">
+			<img src="icons/creditCardIcon.svg" class="w-6 h-6 pt-1 "/>
 			
 			<h1 class=" font-bold p-1 text-sm ">Card</h1>
 			</div>
@@ -29,40 +29,39 @@
 			<div class="flex flex-col focus:outline focus:outline-0">
 			<div class=" flex flex-row justify-between rounded-lg  border-2 border-pink-800 bg-indigo-100 " [ngStyle]="{'background-color': brandColor}">
 				<h1 class="p-4">4032 0313 0709 2584</h1>
-				<img src="icons/visaIcon.png" class="w-18 h-10 pr-6 px-2 pt-4 ">
-		</div>		
+				<img src="icons/visaIcon.svg" class="w-18 h-10  px-4 pt-4 ">
+			</div>		
 			</div>
         	</div>
-		<div class="flex flex-row w-full px-2 ">
-			<div class="border border-gray-200 w-full h-14 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
+		<div class="flex flex-row w-full px-2  ">
+			<div class="border border-gray-200 w-full h-14 bg-indigo-100 rounded-lg" [ngStyle]="{'background-color': brandColor}">
 				<h1 class="p-4">03/25</h1>
 			</div>
-			<div class="border-1 border-gray-200 w-full h-14 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
+			<div class="border-1 border-gray-200 w-full h-14 bg-indigo-100 rounded-lg" [ngStyle]="{'background-color': brandColor}">
 				<h1 class="p-4 border-l border-indigo-300">337</h1>
 			</div>	
 		</div>
 			
 
-		<div class="flex flex-row w-full p-2 ">
-                       <div class="border border-gray-200 w-full rounded-md  h-12 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
-                                <h1 class="p-4 ">Rexilia Mary</h1>
+		 <div class="px-2 pt-2  rounded-lg">
+                        <div class=" flex flex-row justify-between rounded-lg  bg-indigo-100 " [ngStyle]="{'background-color': brandColor}">
+                                <h1 class="p-3">Rexillia Mary</h1>
                         </div>
-		</div>
-		
+                </div>
  		<div class="flex flex-col w-full p-2 ">
-            		<div class="border border-gray-200 w-full rounded-md p-4 h-32 bg-zinc-100">
-                                <h1 class=" font-bold text-md ">Contact information</h1>
+            		<div class="border border-gray-200 w-full rounded-md p-4 h-28 bg-zinc-100">
+                                <h1 class=" font-extrabold text-sm">Contact information</h1>
 			   <div class="flex flex-row justify-between"> 
 			   <div class="flex flex-col">
 				<h1 class="text-sm">gayathri&#64;surfboard.se</h1>
-				<h1 class="text-sm">+910970645665</h1>
+				<h1 class="text-sm mb-2">+910970645665</h1>
 			   </div>
 				<div class="w-8 h-6 rounded-md bg-zinc-300 flex justify-center items-center" [ngStyle]="{'background-color': accentColor}">
     					<img src="icons/editIcon.png" alt="Edit Icon" class="w-4 h-4">
 				</div>
 			    </div>
 				
-				<div class="bg-gray-200 rounded-lg p-1 ">
+				<div class="bg-gray-200 rounded-lg  ">
 					<h1 class="text-xs sm:text-xs md:text-xs lg:text-xs italic">This was set as part of the order and is used for payment processing. Click here to edit</h1>
 				</div>
                         </div>
@@ -72,36 +71,39 @@
 			<h1 class="font-extrabold text-md">Billing Address</h1>
 			<h1 class="text-sm text-gray-600">We require this informations to handle your payment securely and to prevent fraud</h1>
 		</div>
-		 <div class="flex flex-row w-full px-2">
-                       <div class="border border-gray-200 w-full rounded-md  h-12 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
-                                <h1 class="p-2 ">First Street</h1>
+		<div class="px-2  rounded-lg">
+                	<div class=" flex flex-row justify-between rounded-lg  bg-indigo-100 " [ngStyle]="{'background-color': brandColor}">
+                                <h1 class="p-3">First street</h1>
                         </div>
                 </div>
-		       <div class="flex flex-row w-full p-2 space-x-4 ">
-                        <div class="border border-gray-200 w-40 rounded-lg  h-14 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
-                                <h1 class="p-4">600116</h1>
+		<div class="flex flex-row w-full px-2 p-2  space-x-2 ">
+                        <div class="border border-gray-200 w-64 rounded-lg bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
+                                <h1 class="p-2">600116</h1>
                         </div>
-                        <div class="border-2 border-gray-200 w-full  rounded-lg h-14 bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
-                                <h1 class="p-4">Manchester</h1>
+                        <div class="border-2 border-gray-200 w-full  rounded-lg bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
+                                <h1 class="p-2">Manchester</h1>
                         </div>
                 </div>
 
 	</div>
 	<div class="flex flex-col">
-		<h1 class="px-10 text-center pt-4   text-sm text-gray-500">Your card details are securely stored for future transactions on behalf of Fryvest AB.</h1>
-<button type="button"[ngClass]="buttonShape" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-  <div  class="flex flex-row justify-between">
-    <h1 class="p-4">Pay by card</h1>
-    <h1 class="p-4">1,50 kr >></h1>
-  </div>
-</button>
+		<h1 class="px-10 text-center pt-4 pb-1  text-sm text-gray-500">Your card details are securely stored for future transactions on behalf of Fryvest AB.</h1>
+		<button type="button"  [ngClass]="{
+    						'rounded-full': buttonShape === 'pill',
+    						'rounded-lg': buttonShape === 'rounded',
+    						'border': buttonShape === 'edgy'}" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+  			<div  class="flex flex-row justify-between">
+    				<h1 class="p-2">Pay by card</h1>
+    				<h1 class="p-2">1,50 kr >></h1>
+  			</div>
+		</button>
 
 
 </div>
 </form>
 
 <div class="flex flex-row justify-center p-2" [ngStyle]="{'font-family': fontType}">
-	<img src="icons/lockIcon.png" class="w-6 h-4">
+	<img src="icons/lockIcon.png" class="w-4 h-4 pt-1">
 	<h1 class="text-gray-700 text-sm ">Secure payments powered by</h1>
 	<img src="icons/logo.svg" class="w-20 gap-2 ">
 </div>
@@ -111,8 +113,7 @@
 </div>
 <div class="flex flex-row justify-center" [ngStyle]="{'font-family': fontType}">
 	<h1 class="text-sm text-gray-700  px-2">Fyrvest AB(Org. No. 5590325220)</h1>
-	<h1 class="text-sm text-gray-700  px-1">10., 11121 Amsterdam</h1>
-	<img src="icons/mailIcon.png" class="w-6 h-6  py-1 ">
-	<h1 class="text-sm text-gray-700  ">ts&#64;gmail.com</h1>
-	<h1></h1>
+	<h1 class="text-sm text-gray-700 px-1 ">10., 11121 Amsterdam</h1>
+	<img src="icons/mailIcon.svg" class="w-6 h-4 pt-1">
+	<h1 class="text-sm text-gray-700 px-0 ">ts&#64;gmail.com</h1>
 </div>

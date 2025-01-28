@@ -5,6 +5,8 @@ import {MockComponent} from '../mockComponent/mock-component.component';
 
 import {MockComponent1Component} from '../mockComponent1/mock-component1.component';
 import { BrandingService } from '../branding.service';
+import {MobileViewComponentComponent} from '../mobileView/mobile-view-component.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,13 +15,20 @@ import { BrandingService } from '../branding.service';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-constructor(private brandingService: BrandingService){}
+constructor(private router:Router, private brandingService: BrandingService){}
   logoUrl: string = 'https://financialit.net/sites/default/files/financial_it_blog_1920_x_1080_px_1_66.png';
-  backgroundColor: string = '#040947';
-  brandColor: string = '#E1E6FF';  
-  accentColor: string = '#ECECEC';
-  fontType: string = 'Arial, sans-serif';
-  buttonShape:string ='rounded';
+// backgroundColor: string = '#040947';
+// brandColor: string = '#E1E6FF';  
+// accentColor: string = '#ECECEC';
+// fontType: string = 'Arial, sans-serif';
+// buttonShape:string ='rounded';
+
+backgroundColor:string='';
+brandColor:string='';
+accentColor:string='';
+fontType:string='';
+buttonShape:string='';
+
   onLogoUpload(event: any): void {
     const file = event.target.files[0];
     if (file) {
@@ -65,6 +74,17 @@ updateBrColor(color: string): void {
     };
 this.brandingService.saveBrandingData(updatedData);
 }
+mobileViewComponent(){
+this.router.navigate(['/mobileViewComponent'],{
 
+state:{
+
+backgroundColor:this.backgroundColor,
+brandColor:this.brandColor,
+accentColor:this.accentColor,
+fontType:this.fontType,
+buttonShape:this.buttonShape
 }
-
+});
+}
+}

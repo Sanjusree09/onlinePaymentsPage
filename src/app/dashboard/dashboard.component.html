@@ -1,71 +1,63 @@
+<div class="fixed bg-white border-gray-200 dark:bg-gray-900 w-40 h-full p-4 font-lato">
+  <div class="flex flex-col justify-between w-full">
 
-
-
-<nav class="fixed bg-whte border-gray-200 dark:bg-gray-900  w-full ">
-  <div class="flex flex-col justify-between p-4">
-
-    <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"  (click)="toggleMenu()">
+    <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" (click)="toggleMenu()">
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
     </button>
 
-    <div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="  md:flex w-full md:block md:w-auto" id="navbar-default">
-      <ul class="font-medium flex flex-row  md:p-0  border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8  md:mt-0 md:border-0  md:bg-white dark:bg-gray-800">
+    <div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="w-full md:block" id="navbar-default">
+      <ul class="font-medium flex flex-col space-y-4  md:flex-col md:space-y-4 p-4 border border-gray-100 rounded-lg  dark:border-gray-700">
+        
+	<li>
+		<img src="icons/mobileIcon.svg" class="cursor-pointer h-20" (click)="mobileViewComponent()"/>
+	</li>
+
         <li>
-          <label class="py-0 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Bg</label>
-          <input type="color" id="header-color" [(ngModel)]="backgroundColor" (input)="updateBgColor(backgroundColor)" class=" w-12 h-8 border rounded-md cursor-pointer"/>
+          <label class="py-0 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Bg Color</label>
+          <input type="color" id="header-color" [(ngModel)]="backgroundColor" (input)="updateBgColor(backgroundColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
+        </li>
+
+        <li>
+          <label class="py-0 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Brand Color</label>
+          <input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
+        </li>
+
+        <li>
+          <label class="py-0 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Accent Color</label>
+          <input type="color" id="accent-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
         </li>
         <li>
-          <label class=" py-0 px-3 text-white text-xs  rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Brand</label>
-          <input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="w-12 h-8  border rounded-md cursor-pointer"/>
-        </li>
-        <li>
-          <label class=" py-0 px-3 text-xs text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Accent</label>
-          <input type="color" id="accent-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="w-12 h-8  border rounded-md cursor-pointer"/>
-        </li>
-        <li>
-          <label for="buttons" class=" py-2 px-3 text-xs text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Shape</label>
-          <select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class=" mt-2 w-10 h-6 border rounded-md">
+          <label for="buttons" class="py-2 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Button Shape</label>
+          <select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class="mt-2 w-10 h-6 border rounded-md">
             <option value="rounded">Rounded</option>
             <option value="pill">Pill</option>
             <option value="edgy">Edgy</option>
           </select>
         </li>
+
         <li>
-          <label for="font-family" class=" py-2 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Font</label>
-          <select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)" class="mt-2 w-10 h-6  border rounded-md">
+          <label for="font-family" class="py-2 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Font Family</label>
+          <select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)" class="mt-2 w-10 h-6 border rounded-md">
             <option value="Arial, sans-serif" class="text-small">sans-serif</option>
             <option value="Courier New, Courier, monospace">mono</option>
             <option value="Georgia, serif">serif</option>
           </select>
         </li>
 
-	<li class="">
-          <label class=" py-2 px-3 text-xs  text-white  rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Update</label>
-	  <input type="button" id="update"(click)="updateBranding()" class="mt-2 w-10 h-6  border rounded-md bg-white cursor-pointer"/>
-	</li>
+        <li>
+          <label class="py-2 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Update Page</label>
+          <input type="button" id="update" (click)="updateBranding()" class="mt-2 w-10 h-6 border rounded-md bg-white cursor-pointer"/>
+        </li>
       </ul>
     </div>
   </div>
-</nav>
+</div>
 
-<div class="flex flex-col lg:flex-row lg:space-x-4 h-auto  w-full">
-  <app-mock-component 
-    class="lg:w-1/2" 
-    [backgroundColor]="backgroundColor" 
-    [accentColor]="accentColor" 
-    [fontType]="fontType">
-  </app-mock-component>
-  <app-mock-component1 
-    class="lg:w-1/2" 
-    [brandColor]="brandColor" 
-    [fontType]="fontType"
-    [buttonShape]="buttonShape"
-    [logoUrl]="logoUrl" 
-    [accentColor]="accentColor">
-    
-  </app-mock-component1>
+<div class="flex flex-col lg:flex-row lg:space-x-4 h-auto w-full">
+  <app-mock-component class="lg:w-2/3 pl-36" [backgroundColor]="backgroundColor" [accentColor]="accentColor" [fontType]="fontType"></app-mock-component>
+  <app-mock-component1 class="lg:w-1/2" [brandColor]="brandColor" [fontType]="fontType"[buttonShape]="buttonShape"[logoUrl]="logoUrl" [accentColor]="accentColor"></app-mock-component1>
 </div>
 
 
