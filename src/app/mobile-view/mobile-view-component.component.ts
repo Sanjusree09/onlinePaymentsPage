@@ -13,9 +13,9 @@ import { BrandingService } from '../branding.service';
 export class MobileViewComponentComponent {
 
 logoUrl: string = 'https://financialit.net/sites/default/files/financial_it_blog_1920_x_1080_px_1_66.png';
-brandColor:string='';
-accentColor:string='';
-fontType:string='Arial, Sans-seriff';
+brandColor:string='#E1E6FF';
+accentColor:string='#ECECEC';
+fontType:string='Arial, sans-serif';
 buttonShape:string='';
 isMenuOpen: boolean = false;
 
