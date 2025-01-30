@@ -1,64 +1,89 @@
-<div class="fixed bg-white border-gray-200 dark:bg-gray-900 w-40 h-full p-4 font-lato">
+<div class="bg-white dark:bg-gray-900 fixed md:h-screen  lg:h-screen md:w-40 top-0 start-0 border-b border-gray-200 dark:border-gray-600 font-lato">
   <div class="flex flex-col justify-between w-full">
-
-    <button type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" (click)="toggleMenu()">
+    <button type="button" class="inline-flex items-center p-2 w-10 h-10  justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" (click)="toggleMenu()">
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
       </svg>
     </button>
-
-    <div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="w-full md:block" id="navbar-default">
-      <ul class="font-medium flex flex-col space-y-4  md:flex-col md:space-y-4 p-4 border border-gray-100 rounded-lg  dark:border-gray-700">
+    
+    
+    <div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="w-full h-full md:h-screen md:block sm:h-screen lg:h-screen " id="navbar-default">
+      <ul class="font-medium flex flex-col space-y-4 md:flex-col md:space-y-4 p-4 border border-gray-100 rounded-lg dark:border-gray-700 h-screen">
+        <li>
+          <label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Mobile screen</label>
+		      <img src="icons/mobileIcon.svg" class="cursor-pointer h-12" (click)="mobileViewComponent()"/>
+	      </li>
         
-	<li>
-		<img src="icons/mobileIcon.svg" class="cursor-pointer h-20" (click)="mobileViewComponent()"/>
-	</li>
+        <li>
+		      <label class=" text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Upload Logo</label>
+		      <div class="pt-2">
+		        <input type="file" id="logo-upload" (change)="onLogoUpload($event)"  class="w-24 h-8 rounded-md cursor-pointer"/>
+			    </div>
+		    </li>
+       
+        <li>
+          <label class="  text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Background color</label>
+	        <div class="pt-2">
+            <input type="color" id="header-color" [(ngModel)]="backgroundColor" (input)="updateBgColor(backgroundColor)" class="w-10 h-10 border rounded-full cursor-pointer"/>
+          </div>
+	      </li>
 
         <li>
-          <label class="py-0 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Bg Color</label>
-          <input type="color" id="header-color" [(ngModel)]="backgroundColor" (input)="updateBgColor(backgroundColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
+          <label class=" text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Brand Color</label>
+          <div class="pt-2">  
+	          <input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="w-10 h-10 border rounded-full cursor-pointer"/>
+          </div>
+	      </li>
+
+        <li>
+          <label class=" text-sm text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Accent Color</label>
+          <div class="pt-2"> 
+	          <input type="color" id="accent-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="w-10 h-10 border rounded-full cursor-pointer"/>
+          </div>
+	      </li>
+        
+        <li>
+          <label for="buttons" class="text-sm text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Button Shape</label>
+          <div class="pt-2">  
+	          <select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class=" w-24 h-6 border rounded-md">
+              <option value="rounded">Rounded</option>
+              <option value="pill">Pill</option>
+              <option value="edgy">Edgy</option>
+            </select>
+	        </div> 
         </li>
 
         <li>
-          <label class="py-0 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Brand Color</label>
-          <input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
+          <label for="font-family" class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Font Family</label>
+          <div class="pt-2">
+	          <select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)" class="w-24 h-6 border rounded-md">
+              <option value="Arial, sans-serif" class="text-small">sans-serif</option>
+              <option value="Courier New, Courier, monospace">mono</option>
+              <option value="Georgia, serif">serif</option>
+            </select>
+	        </div>
         </li>
 
         <li>
-          <label class="py-0 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Accent Color</label>
-          <input type="color" id="accent-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="w-12 h-8 border rounded-md cursor-pointer"/>
-        </li>
-        <li>
-          <label for="buttons" class="py-2 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Button Shape</label>
-          <select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class="mt-2 w-10 h-6 border rounded-md">
-            <option value="rounded">Rounded</option>
-            <option value="pill">Pill</option>
-            <option value="edgy">Edgy</option>
-          </select>
-        </li>
-
-        <li>
-          <label for="font-family" class="py-2 px-3 text-white text-xs rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Font Family</label>
-          <select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)" class="mt-2 w-10 h-6 border rounded-md">
-            <option value="Arial, sans-serif" class="text-small">sans-serif</option>
-            <option value="Courier New, Courier, monospace">mono</option>
-            <option value="Georgia, serif">serif</option>
-          </select>
-        </li>
-
-        <li>
-          <label class="py-2 px-3 text-xs text-white rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Update Page</label>
-          <input type="button" id="update" (click)="updateBranding()" class="mt-2 w-10 h-6 border rounded-md bg-white cursor-pointer"/>
-        </li>
+	      <div class="pt-2">
+          <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 "(click)="updateBranding()">Update</button>
+	      </div>
+	      </li>
       </ul>
     </div>
   </div>
+</div> 
+
+
+
+<div class="flex flex-col lg:flex-row lg:space-x-4 lg:space-y-4 h-auto w-full">
+  
+ 
+  <app-mock-component class="lg:w-2/3 lg:pl-36 md:pl-36" [backgroundColor]="backgroundColor" [accentColor]="accentColor" [fontType]="fontType"></app-mock-component>
+  <app-mock-component1 class="md:pl-40  lg:pl-0 lg:w-1/2" [brandColor]="brandColor" [fontType]="fontType" [buttonShape]="buttonShape" [logoUrl]="logoUrl" [accentColor]="accentColor"></app-mock-component1>
+
 </div>
 
-<div class="flex flex-col lg:flex-row lg:space-x-4 h-auto w-full">
-  <app-mock-component class="lg:w-2/3 pl-36" [backgroundColor]="backgroundColor" [accentColor]="accentColor" [fontType]="fontType"></app-mock-component>
-  <app-mock-component1 class="lg:w-1/2" [brandColor]="brandColor" [fontType]="fontType"[buttonShape]="buttonShape"[logoUrl]="logoUrl" [accentColor]="accentColor"></app-mock-component1>
-</div>
 
 
 

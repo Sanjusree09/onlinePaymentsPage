@@ -1,23 +1,26 @@
-<div [ngStyle]="{'font-family': fontType}" class="font-lato">
-<div class="pr-4">
-  <img src="icons/English.svg" class="float-right w-20 h-10 rounded-md" />
+<div [ngStyle]="{'font-family': fontType}" class="font-lato ">
+	
+<div class="pr-2">
+<div class="bg-indigo-50 float-right  w-24 h-8  flex justify-center rounded-lg">
+	<img src="icons/languageIcon1.svg" class="float-right w-16 h-8 "/>
+</div>
 </div>
 
-<div class="flex justify-center items-center">
-  <h1 class="text-xl font-bold text-center mt-4">Test store changed</h1>
+<div class="flex justify-center p-1">
+	<h1 class="font-extrabold text-xl">Test store changed</h1>
 </div>
 
-<div class=" pl-10 font-bold text-xl py-4 pt-20" [ngStyle]="{'font-family': fontType}">
+<div class="p-4  font-bold text-xl py-4 pt-20" [ngStyle]="{'font-family': fontType}">
 	<h1>Select how to pay</h1>	
 </div>
-<form class="px-8" [ngStyle]="{'font-family': fontType}">
+<form class="px-4" [ngStyle]="{'font-family': fontType}">
 	<div class="border-2 border-indigo-200 rounded-lg">
 
 		<div class="flex flex-row p-2  justify-between  bg-indigo-100" [ngStyle]="{'background-color': brandColor}">
 			
 			<div class="flex flex-row rounded-md  ">
 			<img src="icons/creditCardIcon.svg" class="w-6 h-6 pt-1 "/>
-			
+			  
 			<h1 class=" font-bold p-1 text-sm ">Card</h1>
 			</div>
 			<div class="flex flex-row " >
@@ -50,20 +53,21 @@
                 </div>
  		<div class="flex flex-col w-full p-2 ">
             		<div class="border border-gray-200 w-full rounded-md p-4 h-28 bg-zinc-100">
-                                <h1 class=" font-extrabold text-sm">Contact information</h1>
+                                <h2 class=" font-extrabold text-sm">Contact information</h2>
 			   <div class="flex flex-row justify-between"> 
 			   <div class="flex flex-col">
-				<h1 class="text-sm">gayathri&#64;surfboard.se</h1>
-				<h1 class="text-sm mb-2">+910970645665</h1>
+				<p class="text-sm">gayathri&#64;surfboard.se</p>
+				<p class="text-sm ">+910970645665</p>
 			   </div>
 				<div class="w-8 h-6 rounded-md bg-zinc-300 flex justify-center items-center" [ngStyle]="{'background-color': accentColor}">
     					<img src="icons/editIcon.png" alt="Edit Icon" class="w-4 h-4">
 				</div>
 			    </div>
 				
-				<div class="bg-gray-200 rounded-lg  ">
-					<h1 class="text-xs sm:text-xs md:text-xs lg:text-xs italic">This was set as part of the order and is used for payment processing. Click here to edit</h1>
-				</div>
+				<div class="bg-gray-200 rounded-md p-1">
+					<p class="text-[10px] italic ">This was set as part of the order and is used for payment processing. Click here to edit</p>
+				  </div>
+				  
                         </div>
                 </div>
 	
@@ -94,7 +98,7 @@
     						'border': buttonShape === 'edgy'}" class=" text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
   			<div  class="flex flex-row justify-between">
     				<h1 class="p-2">Pay by card</h1>
-    				<h1 class="p-2">1,50 kr >></h1>
+    				<h1 class="p-2">1,50 kr »</h1>
   			</div>
 		</button>
 

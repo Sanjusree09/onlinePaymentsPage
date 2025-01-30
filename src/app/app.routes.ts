@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {MockComponent} from './mockComponent/mock-component.component';
-import {MockComponent1Component} from './mockComponent1/mock-component1.component';
-import { MobileViewComponentComponent } from './mobileView/mobile-view-component.component';
+import {MockComponent} from './mock-component/mock-component.component';
+import {MockComponent1Component} from './mock-component1/mock-component1.component';
+import { MobileViewComponentComponent } from './mobile-view/mobile-view-component.component';
 
 export const routes: Routes = [
 {path:'dashboard', component:DashboardComponent},
