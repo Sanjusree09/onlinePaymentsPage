@@ -1,7 +1,7 @@
 <nav class="bg-white dark:bg-gray-900 fixed sm:w-full md:w-40 z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 font-lato">
 	<div class="max-h-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 		<div class="flex md:order-2  ">
-			<button (click)="toggleMenu()" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center  h-2 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+			<button (click)="toggleMenu()" data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center  h-2 justify-center text-sm text-gray-500 rounded-lg md:hidden" aria-controls="navbar-sticky" aria-expanded="false">
 				<span class="sr-only">Open main menu</span>
 				<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
 					<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -10,34 +10,34 @@
 		</div>
 		
 		<div [ngClass]="{'block': isMenuOpen, 'hidden': !isMenuOpen}" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-			<ul class="flex flex-col h-screen p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-y-8 rtl:space-y-reverse md:flex-col md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-				<li>
+			<ul class="overflow-y-auto flex flex-col h-screen p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-y-8 rtl:space-y-reverse md:flex-col md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+				<li class="p-2">
 					<label class=" text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Desktop screen</label>
 					<img src="icons/computerIcon.svg" (click)="desktopView()" class="cursor-pointer  w-12 h-6 sm:w-12 sm:h-12 " />
 				</li>
 	
-	  			<li>
+	  			<li class="p-2">
 					<label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Upload Logo</label>
 					<div class="pt-2">
 						<input type="file" id="logo-upload" (change)="onLogoUpload($event)"  class="w-24 h-8 border rounded-md cursor-pointer"/>
 					</div>
 				</li>
 
-    			<li>
+    			<li class="p-2">
 					<label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Brand color</label>
 					<div class="pt-2">
 						<input type="color" id="brand-color" [(ngModel)]="brandColor" (input)="updateBrColor(brandColor)" class="w-10 h-10 border rounded-full cursor-pointer"/>
     				</div>
 				</li>
 
-    			<li>
+    			<li class="p-2">
 					<label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Accent color</label>
         			<div class="pt-2">
 						<input type="color" id="accent-color" [(ngModel)]="accentColor" (input)="updateAccentColor(accentColor)" class="w-10 h-10 border rounded-full cursor-pointer"/>
     				</div>
 				</li>
             
-				<li>
+				<li class="p-2">
 					<label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Button shape</label>
         			<div class="pt-2"> 
 	 					<select id="buttons" [(ngModel)]="buttonShape" (change)="updateButtons(buttonShape)" class="mt-2 w-24 h-6 border rounded-md">
@@ -48,7 +48,7 @@
 					</div>
         		</li>
 
-        		<li>
+        		<li class="p-2">
 					<label class="text-white text-sm rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white font-bold">Font family</label>
         			<div class="pt-2">  
 						<select id="font-family" [(ngModel)]="fontType" (change)="updateFontType(fontType)" class="mt-2 w-24 h-6 border rounded-md">
@@ -59,9 +59,11 @@
 					</div>
         		</li>
 
-  				<li class="pt-2">
+  				<li class="p-2">
+					<div class="pt-2">
         			<button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 "(click)="updateBranding()">Update</button>
-        		</li>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>

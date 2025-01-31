@@ -55,7 +55,7 @@ updateFontType(font: string): void {
 updateButtons(buttons: string): void {
   this.buttonShape = buttons;
 }
-// Assuming these are your initial values, store them when the page loads or data is fetched.
+
 initialBrandingData = {
   logoUrl: this.logoUrl,
   backgroundColor: this.backgroundColor,
